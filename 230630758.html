@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mmatsie Sara Bopape - Cybersecurity Analyst & Computer Science Student</title>
+    <meta name="description" content="Portfolio of Mmatsie Sara Bopape, a final-year Computer Science student at Walter Sisulu University.Interested in cybersecurity with skills in networking, programming and keeping computer systems safe.">
+    <meta name="author" content="Mmatsie Sara Bopape">
+    <meta name="keywords" content="cybersecurity, computer science, networking, programming, security analyst, South Africa, Walter Sisulu University">
+    
+    <meta property="og:title" content="Mmatsie Sara Bopape - Cybersecurity Analyst Portfolio">
+    <meta property="og:description" content="Cybersecurity analyst and Computer Science student passionate about networking, programming, and innovative security solutions.">
+    <meta property="og:type" content="website">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+            
+        }
+
+    .profile-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .round-pic {
+        width: 200px;       /* You can change size */
+        height: 200px;
+        border-radius: 50%; /* Makes it round */
+        object-fit: cover;  /* Keeps image proportions */
+        cursor: pointer;    /* Shows it’s clickable */
+        transition: transform 0.3s;
+    }
+
+    .round-pic:hover {
+        transform: scale(1.05); /* Slight zoom on hover */
+    }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #3b82f6;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="cyber" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><rect fill="%23000014" width="100" height="100"/><circle fill="%233b82f6" fill-opacity="0.1" cx="50" cy="50" r="2"/></pattern></defs><rect fill="url(%23cyber)" width="1000" height="1000"/></svg>');
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            color: #06b6d4;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content .description {
+            font-size: 1.1rem;
+            color: #a1a1aa;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #3b82f6;
+        }
+
+        /* Cards */
+        .card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        /* Skills */
+        .skill-tag {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            margin: 0.25rem;
+            font-size: 0.9rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #1d4ed8, #1e40af);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #3b82f6;
+            color: #3b82f6;
+        }
+
+        .btn-outline:hover {
+            background: #3b82f6;
+            color: white;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 1rem;
+            color: #3b82f6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero {
+                padding-top: 120px;
+            }
+        }
+
+        /* Cyber Animation */
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.6); }
+        }
+
+        .glow {
+            animation: glow 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="nav-brand">Mmatsie Sara Bopape</div>
+           
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="project.html">Team Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Mmatsie Sara Bopape</h1>
+            <p class="subtitle">Passionate Cybersecurity Enthusiast & Final-Year Computer Science Student</p>
+            <div class="container">
+            <div class="nav-brand">Mmatsie Sara Bopape</div>
+            <div class="profile-container">
+    <img id="profile-pic" src="images/Image1.jpg" alt="Mmatsie Sara Bopape" class="round-pic">
+</div>
+            <p class="description">
+                Final year BSc Computer Science student at Walter Sisulu University, passionate about cybersecurity, 
+                networking, and creating innovative solutions to complex security challenges.
+            </p>
+            <div style="margin-top: 2rem;">
+                <a href="#contact" class="btn glow">Get In Touch</a>
+                <a href="project.html" class="btn btn-outline" style="margin-left: 1rem;">View Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 style="color: #3b82f6; margin-bottom: 1rem;">Education</h3>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4>BSc Computer Science</h4>
+                        <p style="color: #06b6d4;">Walter Sisulu University</p>
+                        <p style="color: #a1a1aa; font-size: 0.9rem;">2022–2025 (Final Year)</p>
+                        <p style="color: #a1a1aa; font-size: 0.9rem; margin-top: 0.5rem;">
+                            Modules: Data Structures, Computer Architecture, Operating Systems, 
+                            Networking, Mathematics, Web Development,software Engineering,
+                        </p>
+                    </div>
+                    <div>
+                        <h4>Grade 12</h4>
+                        <p style="color: #07c1e2;">Eqinisweni Secondary School</p>
+                        <p style="color: #a1a1aa; font-size: 0.9rem;">2022</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="color: #3b82f6; margin-bottom: 1rem;">Experience</h3>
+                    <div>
+                        <h4>Tutor</h4>
+                        <p style="color: #06b6d4;">Walter Sisulu University</p>
+                        <p style="color: #a1a1aa; font-size: 0.9rem;">January 2025 – Present</p>
+                        <ul style="color: #a1a1aa; font-size: 0.9rem; margin-top: 0.5rem; padding-left: 1rem;">
+                            <li>Teaching Linear Programming and Applied Computing</li>
+                            <li>Leading tutorials and exam preparation sessions</li>
+                            <li>Collaborating with staff to improve student support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section" style="background: rgba(0, 0, 0, 0.3);">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 style="color: #3b82f6; margin-bottom: 1rem;">Programming Languages</h3>
+                    <div>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="color: #3b82f6; margin-bottom: 1rem;"> Tools & Technologies</h3>
+                    <div>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Linux CLI</span>
+                        <span class="skill-tag">Cisco Packet Tracer</span>
+                        <span class="skill-tag">Wireshark</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="color: #3b82f6; margin-bottom: 1rem;"> Specialization Areas</h3>
+                    <div>
+                        <span class="skill-tag">Data Communication</span>
+                        <span class="skill-tag">Algorithms</span>
+                        <span class="skill-tag">Networking</span>
+                        <span class="skill-tag">Agile Practices</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="color: #3b82f6; margin-bottom: 1rem;"> Languages</h3>
+                    <div>
+                        <span class="skill-tag">Sepedi (Native)</span>
+                        <span class="skill-tag">English</span>
+                        <span class="skill-tag">Zulu</span>
+                        <span class="skill-tag">Xhosa</span>
+                        <span class="skill-tag">Venda</span>
+                        <span class="skill-tag">Tsonga</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="grid grid-2">
+                <div class="card glow">
+                    <h3 style="color: #3b82f6; margin-bottom: 1rem;">Smart Lecturer Scheduling & Navigation System</h3>
+                    <p style="color: #a1a1aa; margin-bottom: 1rem;">
+                        A React web application that helps students check lecturer availability and get campus directions. 
+                        Features real-time scheduling updates and interactive campus maps.
+                    </p>
+                    <div style="margin-bottom: 1rem;">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Web Development</span>
+                    </div>
+                    <a href="https://github.com/sarahbopape0758" class="btn btn-outline" target="_blank">View Code</a>
+                </div>
+
+                <div class="card glow">
+                    <h3 style="color: #3b82f6; margin-bottom: 1rem;">Hill Cipher Encryption/Decryption Tool</h3>
+                    <p style="color: #a1a1aa; margin-bottom: 1rem;">
+                        Cryptography tool built with Octave using advanced matrix mathematics and modular arithmetic. 
+                        Implements the Hill cipher algorithm for secure text encryption and decryption.
+                    </p>
+                    <div style="margin-bottom: 1rem;">
+                        <span class="skill-tag">Octave</span>
+                        <span class="skill-tag">Cryptography</span>
+                        <span class="skill-tag">Matrix Math</span>
+                    </div>
+                    <a href="https://github.com/sarahbopape0758" class="btn btn-outline" target="_blank">View Code</a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="project.html" class="btn">View All Projects & Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="section" style="background: rgba(0, 0, 0, 0.3);">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 style="color: #3b82f6;">Huawei Cloud Service Computing</h3>
+                    <p style="color: #06b6d4;">Huawei - Micro-Certification</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: #3b82f6;"> Cisco Networking Essentials</h3>
+                    <p style="color: #06b6d4;">Cisco Networking Academy</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: #3b82f6;"> Linux Unhatched</h3>
+                    <p style="color: #06b6d4;">Cisco Networking Academy</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: #3b82f6;"> Programming Essentials in C++</h3>
+                    <p style="color: #06b6d4;">Cisco Networking Academy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div style="max-width: 600px; margin: 0 auto;">
+                <div class="card">
+                    <p style="text-align: center; margin-bottom: 2rem; color: #a1a1aa;">
+                        Let's connect and explore opportunities in cybersecurity and technology.
+                    </p>
+                    <div class="grid grid-2">
+                        <div>
+                            <div class="contact-info">
+                                <svg fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                </svg>
+                                <a href="mailto:bopapesarah2324@gmail.com" style="color: #ffffff;">bopapesarah2324@gmail.com</a>
+                            </div>
+                            <div class="contact-info">
+                                <svg fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5z" clip-rule="evenodd"></path>
+                                    <path fill-rule="evenodd" d="M7.414 15.414a2 2 0 01-2.828-2.828l3-3a2 2 0 012.828 0 1 1 0 001.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5z" clip-rule="evenodd"></path>
+                                </svg>
+                                <a href="https://www.linkedin.com/in/mmatsie-sara-bopape-a59774317" target="_blank" style="color: #ffffff;">LinkedIn Profile</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="contact-info">
+                                <svg fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 0C15.523 0 20 4.59 20 10.253c0 4.529-2.862 9.112-9.399 9.707-.338.031-.74-.012-.78-.547-.06-.563-.27-2.06-.27-2.06s-.42-.357-.42-.996c0-1.14.66-1.958 1.48-1.958.7 0 1.04.525 1.04 1.155 0 .703-.45 1.755-.68 2.73-.19.806.404 1.463 1.2 1.463 1.44 0 2.55-1.519 2.55-3.706 0-1.938-1.39-3.293-3.38-3.293-2.3 0-3.65 1.725-3.65 3.51 0 .695.267 1.44.6 1.845.066.08.075.15.055.232-.06.25-.195.79-.22.9-.033.143-.107.174-.248.105-1.22-.568-1.98-2.293-1.98-3.688 0-2.553 1.856-4.898 5.35-4.898 2.81 0 4.99 2.007 4.99 4.686 0 2.795-1.763 5.042-4.21 5.042-.82 0-1.59-.427-1.85-.936 0 0-.405 1.544-.504 1.923-.183.693-.675 1.56-1.004 2.09A10.006 10.006 0 0010 20c5.523 0 10-4.477 10-10S15.523 0 10 0z"></path>
+                                </svg>
+                                <a href="https://github.com/sarahbopape0758" target="_blank" style="color: #ffffff;">GitHub Portfolio</a>
+                            </div>
+                            <div class="contact-info">
+                                <svg fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Clayville, Olifantsfontein</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: rgba(0, 0, 0, 0.8); padding: 2rem 0; text-align: center;">
+        <div class="container">
+            <p style="color: #a1a1aa;">&copy; 2025 Mmatsie Sara Bopape. All rights reserved.</p>
+            <p style="color: #a1a1aa; margin-top: 0.5rem;">
+                <a href="dynamic.php" style="color: #3b82f6;">Server Time</a> | 
+                <a href="dynamic.jsp" style="color: #3b82f6; margin-left: 1rem;">JSP Info</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        <!-- JavaScript -->
+
+    const profilePic = document.getElementById('profile-pic');
+
+    // Array of pictures you want to toggle between
+    const pictures = ["images/profile1.jpg", "images/profile2.jpg"];
+    let current = 0;
+
+    profilePic.addEventListener("click", () => {
+        current = (current + 1) % pictures.length; // Cycle through pictures
+        profilePic.src = pictures[current];
+    });
+
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+            } else {
+                navbar.style.background = 'rgba(0, 0, 0, 0.9)';
+            }
+        });
+        // Select the image element
+const profilePic = document.getElementById("profilePic");
+
+// Store multiple images (you can add more later)
+const images = ["images/Image1.jpg", "images/Image2.jpg"];
+let currentIndex = 0;
+
+// Function to change image
+function changeImage() {
+    currentIndex = (currentIndex + 1) % images.length; // loops between images
+    profilePic.src = images[currentIndex];
+}
+
+// Change image on click
+profilePic.addEventListener("click", changeImage);
+
+// Auto-change every 10 seconds (50,00 ms)
+setInterval(changeImage, 5000);
+
+    </script>
+</body>
+</html>
