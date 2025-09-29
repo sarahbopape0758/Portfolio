@@ -282,7 +282,7 @@
             <div class="container">
             <div class="nav-brand">Mmatsie Sara Bopape</div>
             <div class="profile-container">
-    <img id="profile-pic" src="images/Image1.jpg" alt="Mmatsie Sara Bopape" class="round-pic">
+    <img id="profile-pic" src="Image1.jpg" alt="Mmatsie Sara Bopape" class="round-pic">
 </div>
             <p class="description">
                 Final year BSc Computer Science student at Walter Sisulu University, passionate about cybersecurity, 
@@ -508,58 +508,46 @@
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+   <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
             });
         });
-        <!-- JavaScript -->
-
-    const profilePic = document.getElementById('profile-pic');
-
-    // Array of pictures you want to toggle between
-    const pictures = ["images/profile1.jpg", "images/profile2.jpg"];
-    let current = 0;
-
-    profilePic.addEventListener("click", () => {
-        current = (current + 1) % pictures.length; // Cycle through pictures
-        profilePic.src = pictures[current];
     });
 
+    // Select the image element
+    const profilePic = document.getElementById("profile-pic");
 
-        // Navbar background on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
-            } else {
-                navbar.style.background = 'rgba(0, 0, 0, 0.9)';
-            }
-        });
-        // Select the image element
-const profilePic = document.getElementById("profilePic");
+    // Store multiple images
+    const images = ["Image1.jpg", "Image2.jpg"];
+    let currentIndex = 0;
 
-// Store multiple images (you can add more later)
-const images = ["images/Image1.jpg", "images/Image2.jpg"];
-let currentIndex = 0;
+    // Function to change image
+    function changeImage() {
+        currentIndex = (currentIndex + 1) % images.length; // loops between images
+        profilePic.src = images[currentIndex];
+    }
 
-// Function to change image
-function changeImage() {
-    currentIndex = (currentIndex + 1) % images.length; // loops between images
-    profilePic.src = images[currentIndex];
-}
+    // Change image on click
+    profilePic.addEventListener("click", changeImage);
 
-// Change image on click
-profilePic.addEventListener("click", changeImage);
+    // Auto-change every 10 seconds (10000 ms)
+    setInterval(changeImage, 10000);
 
-// Auto-change every 10 seconds (50,00 ms)
-setInterval(changeImage, 5000);
-
-    </script>
+    // Navbar background on scroll
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 100) {
+            navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+        } else {
+            navbar.style.background = 'rgba(0, 0, 0, 0.9)';
+        }
+    });
+</script>
 </body>
+
 </html>
