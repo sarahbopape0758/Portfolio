@@ -11,6 +11,99 @@
     <meta property="og:title" content="Mmatsie Sara Bopape - Cybersecurity Analyst Portfolio">
     <meta property="og:description" content="Cybersecurity analyst and Computer Science student passionate about networking, programming, and innovative security solutions.">
     <meta property="og:type" content="website">
+
+    <style>
+    body {
+        background: radial-gradient(circle, #001f4d, #000814);
+        color: white;
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .music-card {
+        background: linear-gradient(145deg, #005eff, #003399);
+        padding: 30px;
+        border-radius: 20px;
+        width: 350px;
+        text-align: center;
+        box-shadow: 0 0 25px rgba(0, 132, 255, 0.8);
+        transition: 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .music-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 50px #00ccff;
+    }
+
+    h2 {
+        margin: 10px 0 5px;
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+        opacity: 0.9;
+    }
+
+    audio {
+        margin-top: 15px;
+        width: 100%;
+        outline: none;
+    }
+
+    /* Hidden hover message */
+    .hover-message {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 10, 40, 0.95);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        font-size: 16px;
+        opacity: 0;
+        transition: 0.4s ease;
+    }
+
+    .music-card:hover .hover-message {
+        opacity: 1;
+    }
+
+    /* Unique animated bars */
+    .bars {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    .bar {
+        width: 6px;
+        height: 20px;
+        background: #00ccff;
+        animation: bounce 1s infinite ease-in-out;
+    }
+
+    .bar:nth-child(1) { animation-delay: 0s; }
+    .bar:nth-child(2) { animation-delay: .2s; }
+    .bar:nth-child(3) { animation-delay: .4s; }
+    .bar:nth-child(4) { animation-delay: .6s; }
+
+    @keyframes bounce {
+        0%, 100% { height: 10px; }
+        50% { height: 30px; }
+    }
+</style>
     
     <style>
         * {
@@ -450,9 +543,32 @@
             </div>
         </div>
     </section>
-<audio autoplay loop controls>
-    <source src="audio.mp3" type="audio/mpeg">
-</audio
+
+    <div class="music-card">
+    <h2>🎧 My Motivation Song</h2>
+    <p>This song keeps me moving forward.</p>
+
+    <!-- Animating bars -->
+    <div class="bars">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Audio -->
+    <audio id="song" controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+    </audio>
+
+    <!-- Hidden message on hover -->
+    <div class="hover-message">
+        This song is my motivation to continue in life.  
+        It reminds me that I am strong, capable, and unstoppable 💙
+    </div>
+</div>
+
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
@@ -550,8 +666,23 @@
         }
     });
 </script>
+    <script>
+    const song = document.getElementById("song");
+
+    // When song plays – glow effect
+    song.addEventListener("play", () => {
+        document.querySelector(".music-card").style.boxShadow = "0 0 70px #00ffff";
+    });
+
+    // When paused – normal effect
+    song.addEventListener("pause", () => {
+        document.querySelector(".music-card").style.boxShadow = "0 0 25px rgba(0, 132, 255, 0.8)";
+    });
+</script>
+
 </body>
 
 </html>
+
 
 
