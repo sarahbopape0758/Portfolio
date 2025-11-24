@@ -21,6 +21,7 @@
             color: #ffffff;
             line-height: 1.6;
             min-height: 100vh;
+            margin: 0;
             
         }
 
@@ -37,7 +38,7 @@
         border-radius: 50%; /* Makes it round */
         object-fit: cover;  /* Keeps image proportions */
         cursor: pointer;    /* Shows it’s clickable */
-        transition: transform 0.3s;
+        transition: transform 0.9s;
     }
 
     .round-pic:hover {
@@ -301,7 +302,7 @@
                     <div style="margin-bottom: 1.5rem;">
                         <h4>BSc Computer Science</h4>
                         <p style="color: #06b6d4;">Walter Sisulu University</p>
-                        <p style="color: #a1a1aa; font-size: 0.9rem;">2022–2025 (Final Year)</p>
+                        <p style="color: #a1a1aa; font-size: 0.9rem;">2022–2026 (Final Year)</p>
                         <p style="color: #a1a1aa; font-size: 0.9rem; margin-top: 0.5rem;">
                             Modules: Data Structures, Computer Architecture, Operating Systems, 
                             Networking, Mathematics, Web Development,software Engineering,
@@ -326,6 +327,16 @@
                             <li>Collaborating with staff to improve student support</li>
                         </ul>
                     </div>
+                    <div style="margin-top: 1rem;">
+            <h4>IEC Digital Registration Assistant</h4>
+            <p style="color: #06b6d4;">Aug 2025 – Sep 2025</p>
+            <ul style="color: #a1a1aa; font-size: 0.9rem; margin-top: 0.5rem; padding-left: 1rem;">
+                <li>Assisted community members with IEC voter registration and online submissions</li>
+                <li>Provided technical support to elderly and first-time online users</li>
+                <li>Improved community digital literacy by guiding users through online systems</li>
+                <li>Ensured accurate capturing of registration details and queue coordination</li>
+            </ul>
+        </div>
                 </div>
             </div>
         </div>
@@ -443,34 +454,49 @@
                     <h3 style="color: #3b82f6;"> Programming Essentials in C++</h3>
                     <p style="color: #06b6d4;">Cisco Networking Academy</p>
                 </div>
+                <div class="card">
+                    <h3 style="color: #3b82f6;">Professional Foundations Program</h3>
+                    <p style="color: #06b6d4;">ALX AFRICA</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: #3b82f6;">Google Cybersecurity</h3>
+                    <p style="color: #06b6d4;">Coursera</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: #3b82f6;">FULL STACK DEVELOPMENT</h3>
+                    <p style="color: #06b6d4;">FNB South Africa Academy</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="music-card" >
-    <h2>My Motivation Song</h2>
-    <p>This song keeps me moving forward.</p>
+   <!-- Music Section -->
+<section class="section">
+<div class="container">
+<h2 class="section-title">My Motivation Song</h2>
+<div class="card glow">
+    <p style="color: #a1a1aa; margin-bottom: 1.5rem;">
+        This song keeps me moving forward and motivates me to continue in life. 
+        It reminds me that I am strong, capable, and unstoppable.
+    </p>
 
-    <!-- Animating bars -->
-    <div class="bars">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
-
-    <!-- Audio -->
-    <audio id="song" controls>
+    <audio id="song" controls style="width: 100%; border-radius: 8px;">
         <source src="audio.mp3" type="audio/mpeg">
-        Your browser does not support audio.
+        Your browser does not support the audio element.
     </audio>
 
-    <!-- Hidden message on hover -->
-    <div class="hover-message">
-        This song is my motivation to continue in life.  
-        It reminds me that I am strong, capable, and unstoppable 
+    <!-- Visualizer bars -->
+    <div id="audio-visualizer" style="display: flex; gap: 4px; margin-top: 1.5rem; height: 50px; align-items: flex-end;">
+        <div class="bar" style="width: 5px; background: #3b82f6; height: 10px; border-radius: 3px;"></div>
+        <div class="bar" style="width: 5px; background: #06b6d4; height: 10px; border-radius: 3px;"></div>
+        <div class="bar" style="width: 5px; background: #3b82f6; height: 10px; border-radius: 3px;"></div>
+        <div class="bar" style="width: 5px; background: #06b6d4; height: 10px; border-radius: 3px;"></div>
+        <div class="bar" style="width: 5px; background: #3b82f6; height: 10px; border-radius: 3px;"></div>
+        <div class="bar" style="width: 5px; background: #06b6d4; height: 10px; border-radius: 3px;"></div>
     </div>
 </div>
+</div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="section">
@@ -570,20 +596,33 @@
     });
            const song = document.getElementById("song");
 
-    // When song plays – glow effect
-    song.addEventListener("play", () => {
-        document.querySelector(".music-card").style.boxShadow = "0 0 70px #00ffff";
+   // Audio Visualizer
+    const audio = document.getElementById('song');
+    const bars = document.querySelectorAll('#audio-visualizer .bar');
+
+    audio.addEventListener('play', () => {
+        const interval = setInterval(() => {
+            if (audio.paused) {
+                clearInterval(interval);
+                bars.forEach(bar => bar.style.height = '10px');
+            } else {
+                bars.forEach(bar => {
+                    const randomHeight = Math.floor(Math.random() * 40) + 10;
+                    bar.style.height = randomHeight + 'px';
+                });
+            }
+        }, 200);
     });
 
-    // When paused – normal effect
-    song.addEventListener("pause", () => {
-        document.querySelector(".music-card").style.boxShadow = "0 0 25px rgba(0, 132, 255, 0.8)";
+    audio.addEventListener('pause', () => {
+        bars.forEach(bar => bar.style.height = '10px');
     });
 </script>
 
 </body>
 
 </html>
+
 
 
 
