@@ -263,6 +263,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#career-interests">Career Interests</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="project.html">Team Projects</a></li>
@@ -277,7 +278,6 @@
             <h1>Mmatsie Sara Bopape</h1>
             <p class="subtitle">Computer Science Graduate | Cybersecurity | Cloud Computing | Networking | Data Technologies | Software Development </p>
             <div class="container">
-            <div class="nav-brand">Mmatsie Sara Bopape</div>
             <div class="profile-container">
     <img id="profile-pic" src="Image1.jpg" alt="Mmatsie Sara Bopape" class="round-pic">
 </div>
@@ -303,7 +303,7 @@
                         <p style="color: #06b6d4;">Walter Sisulu University</p>
                         <p style="color: #a1a1aa; font-size: 0.9rem;">2022–2026 (Completed)</p>
                         <p style="color: #a1a1aa; font-size: 0.9rem; margin-top: 0.5rem;">
-                            Modules: Modules: Data Structures, Computer Architecture, Operating Systems, Networking, 
+                            Modules: Data Structures, Computer Architecture, Operating Systems, Networking, 
                             Database Management, Software Engineering, Web Development, Artificial Intelligence, and Mathematics.
                         </p>
                     </div>
@@ -541,7 +541,6 @@
         </div>
 
     <!-- Visualizer bars -->
-    <div id="audio-visualizer" style="display: flex; gap: 4px; margin-top: 1.5rem; height: 50px; align-items: flex-end;">
         <div class="bar" style="width: 5px; background: #3b82f6; height: 10px; border-radius: 3px;"></div>
         <div class="bar" style="width: 5px; background: #06b6d4; height: 10px; border-radius: 3px;"></div>
         <div class="bar" style="width: 5px; background: #3b82f6; height: 10px; border-radius: 3px;"></div>
@@ -645,29 +644,6 @@
         } else {
             navbar.style.background = 'rgba(0, 0, 0, 0.9)';
         }
-    });
-           const song = document.getElementById("song");
-
-   // Audio Visualizer
-    const audio = document.getElementById('song');
-    const bars = document.querySelectorAll('#audio-visualizer .bar');
-
-    audio.addEventListener('play', () => {
-        const interval = setInterval(() => {
-            if (audio.paused) {
-                clearInterval(interval);
-                bars.forEach(bar => bar.style.height = '10px');
-            } else {
-                bars.forEach(bar => {
-                    const randomHeight = Math.floor(Math.random() * 40) + 10;
-                    bar.style.height = randomHeight + 'px';
-                });
-            }
-        }, 200);
-    });
-
-    audio.addEventListener('pause', () => {
-        bars.forEach(bar => bar.style.height = '10px');
     });
 </script>
 
