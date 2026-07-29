@@ -104,10 +104,10 @@ cd Portfolio
 
 I am interested in opportunities within:
 
-- Software Development
+- Cybersecurity 
 - Cloud Computing
-- Data Technologies
-- Cybersecurity
+- Data Technologies 
+- Software Development 
 - Information Technology
 - Graduate Programmes
 
